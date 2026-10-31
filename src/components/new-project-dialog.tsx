@@ -36,6 +36,7 @@ export default function NewProjectDialog() {
         createdAt: now,
         updatedAt: now,
       });
+      window.dispatchEvent(new Event("projects-updated"));
 
       setName("");
       setDescription("");
