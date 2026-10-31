@@ -1,3 +1,4 @@
+import NewProjectDialog from "@/components/new-project-dialog";
 import {
   Activity,
   ArrowDownRight,
@@ -380,11 +381,7 @@ export default function Home() {
               </p>
             </div>
 
-            <button className="flex h-10 items-center justify-center gap-2 rounded-lg bg-indigo-500 px-4 text-xs font-semibold text-white transition hover:bg-indigo-400">
-              <Plus size={16} />
-              New project
-            </button>
-          </section>
+           <NewProjectDialog />
 
           <section className="mb-8 grid grid-cols-2 gap-3 xl:grid-cols-4">
             <StatCard
