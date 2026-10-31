@@ -1,3 +1,4 @@
+import SavedProjects from "@/components/saved-projects";
 import NewProjectDialog from "@/components/new-project-dialog";
 import {
   Activity,
@@ -456,13 +457,8 @@ export default function Home() {
                 <ArrowRight size={14} />
               </button>
             </div>
-
-            <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
-              {projects.map((project) => (
-                <ProjectCard key={project.name} project={project} />
-              ))}
-            </div>
-          </section>
+            <SavedProjects />
+            </section>
 
           <section className="grid grid-cols-1 gap-4 xl:grid-cols-[1.4fr_1fr]">
             <div className="rounded-xl border border-white/[0.07] bg-[#111114] p-5">
