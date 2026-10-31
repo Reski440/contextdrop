@@ -382,6 +382,7 @@ export default function Home() {
             </div>
 
            <NewProjectDialog />
+          </section>
 
           <section className="mb-8 grid grid-cols-2 gap-3 xl:grid-cols-4">
             <StatCard
