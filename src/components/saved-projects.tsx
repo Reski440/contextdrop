@@ -56,7 +56,7 @@ return (
 {projects.map((project) => (
 <Link
 key={project.id}
-href={"/projects/${project.id}"}
+href={`/projects/${project.id}`}
 className="block rounded-xl border border-white/[0.07] bg-[#111114] p-5 transition hover:border-indigo-500/40 hover:bg-[#15151a]"
 >
 <div className="flex justify-between">
