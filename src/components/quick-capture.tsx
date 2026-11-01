@@ -1,8 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { db, type Project } from "@/lib/db";
-import { Plus, X, Zap } from "lucide-react";
+import { Plus, X, Zap, History } from "lucide-react";
 
 interface QuickCaptureProps {
   defaultProjectId?: string;
@@ -66,14 +67,24 @@ export default function QuickCapture({
 
   return (
     <>
-      <button
-        onClick={() => setOpen(true)}
-        className="flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 text-sm font-medium text-white transition hover:bg-indigo-500"
-      >
-        <Zap size={16} />
-        Quick Capture
-        <Plus size={15} />
-      </button>
+      <div className="flex flex-wrap items-center gap-2">
+        <button
+          onClick={() => setOpen(true)}
+          className="flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 text-sm font-medium text-white transition hover:bg-indigo-500"
+        >
+          <Zap size={16} />
+          Quick Capture
+          <Plus size={15} />
+        </button>
+
+        <Link
+          href="/captures"
+          className="flex items-center gap-2 rounded-lg border border-white/10 px-4 py-3 text-sm text-zinc-300 transition hover:bg-white/5"
+        >
+          <History size={16} />
+          View History
+        </Link>
+      </div>
 
       {open && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
@@ -97,7 +108,7 @@ export default function QuickCapture({
             </div>
 
             <label className="mb-2 block text-sm text-zinc-400">
-              What&apos;s on your mind?
+              What's on your mind?
             </label>
 
             <textarea
@@ -170,4 +181,4 @@ export default function QuickCapture({
       )}
     </>
   );
-                  }
+}
