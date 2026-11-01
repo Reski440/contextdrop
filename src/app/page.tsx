@@ -1,3 +1,4 @@
+import QuickCapture from "@/components/quick-capture";
 import SavedProjects from "@/components/saved-projects";
 import NewProjectDialog from "@/components/new-project-dialog";
 import {
@@ -8,7 +9,6 @@ import {
   Bell,
   Bookmark,
   Check,
-  ChevronDown,
   CircleDot,
   Clock3,
   Command,
@@ -382,7 +382,7 @@ export default function Home() {
               </p>
             </div>
 
-           <NewProjectDialog />
+            <NewProjectDialog />
           </section>
 
           <section className="mb-8 grid grid-cols-2 gap-3 xl:grid-cols-4">
@@ -435,11 +435,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <button className="flex h-10 shrink-0 items-center justify-center gap-2 rounded-lg border border-white/[0.10] bg-white/[0.05] px-4 text-xs font-medium text-zinc-200 transition hover:bg-white/[0.10]">
-                <Plus size={15} />
-                Capture something
-                <Command size={12} className="ml-1 text-zinc-500" />
-              </button>
+              <QuickCapture />
             </div>
           </section>
 
@@ -457,8 +453,9 @@ export default function Home() {
                 <ArrowRight size={14} />
               </button>
             </div>
+
             <SavedProjects />
-            </section>
+          </section>
 
           <section className="grid grid-cols-1 gap-4 xl:grid-cols-[1.4fr_1fr]">
             <div className="rounded-xl border border-white/[0.07] bg-[#111114] p-5">
