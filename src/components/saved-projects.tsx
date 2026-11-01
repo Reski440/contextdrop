@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import { db, type Project } from "@/lib/db";
 import { ArrowUpRight } from "lucide-react";
 
@@ -53,9 +54,10 @@ Create your first project to get started.
 return (
 <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-3">
 {projects.map((project) => (
-<div
+<Link
 key={project.id}
-className="rounded-xl border border-white/[0.07] bg-[#111114] p-5"
+href={"/projects/${project.id}"}
+className="block rounded-xl border border-white/[0.07] bg-[#111114] p-5 transition hover:border-indigo-500/40 hover:bg-[#15151a]"
 >
 <div className="flex justify-between">
 <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-500/10 font-semibold text-indigo-400">
@@ -84,7 +86,7 @@ className="rounded-xl border border-white/[0.07] bg-[#111114] p-5"
       <p className="mt-4 text-xs text-indigo-400">
         {project.status}
       </p>
-    </div>
+    </Link>
   ))}
 </div>
 
