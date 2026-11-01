@@ -18,9 +18,20 @@ export interface Capture {
   createdAt: Date;
 }
 
+export interface Task {
+  id: string;
+  projectId: string;
+  title: string;
+  description: string;
+  status: "To Do" | "In Progress" | "Completed";
+  createdAt: Date;
+  updatedAt: Date;
+}
+
 class ContextDropDB extends Dexie {
   projects!: Table<Project, string>;
   captures!: Table<Capture, string>;
+  tasks!: Table<Task, string>;
 
   constructor() {
     super("ContextDropDB");
@@ -28,6 +39,12 @@ class ContextDropDB extends Dexie {
     this.version(1).stores({
       projects: "id, name, status, updatedAt",
       captures: "id, projectId, type, createdAt",
+    });
+
+    this.version(2).stores({
+      projects: "id, name, status, updatedAt",
+      captures: "id, projectId, type, createdAt",
+      tasks: "id, projectId, status, createdAt, updatedAt",
     });
   }
 }
